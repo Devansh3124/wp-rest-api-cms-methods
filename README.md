@@ -120,3 +120,26 @@ add_filter('rest_cms_menu_json', function ($json, $request) {
   return $json;
 }, 10, 3);
 ```
+## Installation
+1. Clone or download the plugin repository.
+2. Copy the plugin folder into the WordPress `/wp-content/plugins/` directory.
+3. Activate the plugin from the WordPress Admin dashboard.
+
+## Usage
+This plugin exposes additional REST API endpoints to use WordPress as a CMS backend.
+
+## Example Endpoints
+
+- Fetch a page by path:
+GET /wp-json/rest-cms-plugin/v1/page?path=about-us
+
+- Fetch menu by location:
+GET /wp-json/rest-cms-plugin/v1/menu/primary
+
+- Fetch plugin options:
+GET /wp-json/rest-cms-plugin/v1/options
+
+## Permissions
+REST API endpoints are protected using WordPress permission callbacks.
+Only authorized users can access sensitive content.
+
