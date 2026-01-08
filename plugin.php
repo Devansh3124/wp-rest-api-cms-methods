@@ -83,6 +83,10 @@ if (!class_exists("CMSMethodPlugin")) {
       register_rest_route( $namespace, '/options', array(
         'methods' => WP_REST_Server::READABLE,
         'callback' => array( $this, 'fetch_options' ),
+        'permission_callback' => function () {
+    return current_user_can( 'edit_posts' );
+},
+
         'args' => array(
           'options' => array(
             'type' => 'array',
